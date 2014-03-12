@@ -7,8 +7,9 @@
 
   <servlet>
     <servlet-name>PostMessage</servlet-name>
-    <servlet-path>com.ballstoyou.servlets.PostMessage</servlet-path>
+    <servlet-class>com.ballstoyou.servlets.PostMessage</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>PostMessage</servlet-name>
     <url-pattern>/messages</url-pattern>

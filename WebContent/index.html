@@ -1,17 +1,23 @@
 <html>
   <head>
     <title>Balls to you Chat</title>
-    <srcipt type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
     <script type="text/javascript">
       //All JS goes here
+            $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
+                $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
+                    $.get('PostMessage', function(responseText) { // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                        $('#chat-area').append(responseText);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+                    });
+                });
+            });
     </script>
-
-    <textarea id="chat-area"></textarea>
-    <form action="/messages" method="post">
-      Message: <input type="text" name="message" />
-      <button id="post-message-button" value="Submit" />
-    </form>
+    
+    <textarea id="chat-area" style="width: 500px; height:300px;"></textarea>
+    <br/>
+      Message: <input type="text" name="message" style="width: 350px;"/>
+      <button id="post-message-button">Submit</button>
   </body>
 </html>
