@@ -14,6 +14,17 @@
 	          document.getElementById('wdf').value = "";
 	          document.getElementById('wdf').focus();
       	  }
+    	  
+    	  $.ajax
+          ({
+              type: "POST",           
+              data: 'message='+message,
+              url: "PostMessage",
+          });
+
+    	  $.post('PostMessage', function(data) {
+              alert(data);
+          });
       }
       $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
          $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
