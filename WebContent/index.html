@@ -6,17 +6,30 @@
   <body>
     <script type="text/javascript">
       //All JS goes here
-            $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
-                $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
-                    message = document.getElementById('wdf').value;  // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-                    $('#chat-area').append(message);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
-                });
-            });
+      function postMessage() {
+    	  message = document.getElementById('wdf').value; // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+      	  if(message != "") {
+	    	  message += "\n";
+	          $('#chat-area').append(message);// Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+	          document.getElementById('wdf').value = "";
+	          document.getElementById('wdf').focus();
+      	  }
+      }
+      $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
+         $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
+             postMessage();
+         });
+      });
+	  document.addEventListener('keydown', function(event) {
+		if(event.keyCode == 13) { //if ENTER is pressed
+			postMessage();
+		}     		
+	  });
     </script>
     
-    <textarea id="chat-area" style="width: 500px; height:300px;"></textarea>
+    <textarea id="chat-area" style="width: 500px; height:300px;" readonly></textarea>
     <br/>
-      Message: <input type="text" name="message" style="width: 350px;"/>
-      <button id="post-message-button" onclick="wat()">Submit</button>
+      Message: <input id="wdf" type="text" name="message" style="width: 350px;" autofocus/>
+      <button id="post-message-button">Submit</button>
   </body>
 </html>

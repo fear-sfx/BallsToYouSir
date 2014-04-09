@@ -1,50 +1,30 @@
-<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript">
-function displayProject()
-{
-    var xmlhttp;
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-
-    xmlhttp.open("GET","PostMessage",true);
-    xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    xmlhttp.onreadystatechange= function ()
-    {
-        if (xmlhttp.readyState==4)
-        {
-        if (xmlhttp.status == 200)
-        {
-        var time = xmlhttp.responseText;
-        //alert(time);
-        document.getElementById("chat-area").value=document.getElementById("chat-area").value+"\n"+xmlhttp.responseText;
-        }
-        }
-    }
-    xmlhttp.send(); 
-
-//document.getElementById("center").innerHTML=Date();
-}
-
-</script>
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Learning CSS</title>
-</head>
-    <body>
-    <div id ="headerLink" class="HeaderLink" >
-        <button id="adminLink" class="AdminLink" href='DNE.jsp'>Home</button></div>
-        <button id="projectButton" class="ProjectButton"  onclick="displayProject()" >Projects</button>
-    </div>
-
-        <div id="center" class ="Center"><p>Click Project</p></div>
+  <head>
+    <title>Balls to you Chat</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //All JS goes here
+//             $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
+//                 $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
+//                     message = document.getElementById('wdf').value;  // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+//                     message += "\n";
+//                     $('#chat-area').append(message);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+//                     document.getElementById('wdf').value = "";  // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+//                 });
+//             });
+      	function postMessage() {
+            $.get('PostMessage', function(data) {
+                alert(data);
+            });
+      	}
+        </script>
+    </script>
+    
     <textarea id="chat-area" style="width: 500px; height:300px;"></textarea>
-    </body>
+    <br/>
+      Message: <input id="wdf" type="text" name="message" style="width: 350px;"/>
+      <button id="post-message-button" onclick="postMessage()">Submit</button>
+  </body>
 </html>

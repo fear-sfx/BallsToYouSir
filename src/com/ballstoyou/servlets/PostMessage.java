@@ -1,9 +1,8 @@
 package com.ballstoyou.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,29 +23,13 @@ public class PostMessage extends HttpServlet {
 //  protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //	  
 //  }
+  
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      String text = "some text";
 
-	  @Override
-	  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  
-		  response.setContentType("text/html");
-	        PrintWriter out = response.getWriter();
-	        out.write("Hello from servlet !!");
-	        out.println("Hello");
-
-		  
-//	      String text = "some text";
-//
-//	      response.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
-//	      response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-//	      response.getWriter().write(text);       // Write response body.
-	  }
-	  
-	  @Override
-	  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	      String text = "some text";
-
-	      response.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
-	      response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-	      response.getWriter().write(text);       // Write response body.
-	  }
+      response.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
+      response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+      response.getWriter().write(text);       // Write response body.
+  }
 }
