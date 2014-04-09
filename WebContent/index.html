@@ -6,18 +6,26 @@
   <body>
     <script type="text/javascript">
       //All JS goes here
-            $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
-                $('#post-message-button').click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
-                    $.get('PostMessage', function(responseText) { // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-                        $('#chat-area').append(responseText);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
-                    });
-                });
-            });
+      
+      function wat() {
+    	document.getElementById("chat-area").innerHTML = Date();
+       	$.get('PostMessage', function(responseText) { // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+       	$('#chat-area').text(responseText);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+		});
+      }
+      
+//             $(document).ready(function() {                        // When the HTML DOM is ready loading, then execute the following function...
+//                 $("post-message-button").click(function() {               // Locate HTML DOM element with ID "somebutton" and assign the following function to its "click" event...
+//                     $.get('PostMessage', function(responseText) { // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+//                         $('#chat-area').text(responseText);         // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
+//                     });
+//                 });
+//             });
     </script>
     
     <textarea id="chat-area" style="width: 500px; height:300px;"></textarea>
     <br/>
       Message: <input type="text" name="message" style="width: 350px;"/>
-      <button id="post-message-button">Submit</button>
+      <button id="post-message-button" onclick="wat()">Submit</button>
   </body>
 </html>

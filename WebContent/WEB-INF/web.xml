@@ -12,6 +12,6 @@
   
   <servlet-mapping>
     <servlet-name>PostMessage</servlet-name>
-    <url-pattern>/messages</url-pattern>
+    <url-pattern>/PostMessage</url-pattern>
   </servlet-mapping>
 </web-app>
