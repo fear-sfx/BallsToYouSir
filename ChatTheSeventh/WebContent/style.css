@@ -1,0 +1,167 @@
+body {
+	color: white;
+	background-color: #101010;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+.center {	
+	margin-left:auto;
+	margin-right:auto;
+	width:15%;
+}
+
+#username {
+	width:100%;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#loginButton {
+	float: right;
+	width: 30%;
+	border: 2px ridge #888;
+	background-color: #fff;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.chatClient {
+	margin: auto;
+  	position: absolute;
+  	background-color: #505050;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	width: 80%;
+	height: 95%;
+	padding: 1px;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#users {
+	margin: auto;
+  	position: absolute;
+	background-color: #616161;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	float: left;
+	width: 20%;
+	height: 95%;
+	margin-left: 40px;
+	padding: 0;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#chatBox {
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	float: right;
+	width: 70%;
+	height: 95%;
+	padding: 0;
+	margin-right: 40px;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#messages {
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; right: 0;
+	width: 99%;
+	height: 80%;
+  	background-color: #bbb;
+  	color: white;
+	border: 2px ridge #888;
+  	resize: none;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.inputArea {	
+	margin: auto;
+  	position: absolute;
+  	bottom: 0; left: 0; right: 0;
+	width: 100%;
+	height: 18%;
+}
+
+#userMessage {	
+	margin: auto;
+  	position: absolute;
+  	bottom: 0; left: 0;
+	width: 75%;
+	height: 95%;
+  	background-color: #ddd;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#postMessageButton {	
+	margin: auto;
+  	position: absolute;
+  	bottom: 0; right: 0; top: 0;
+	width: 24%;
+	height: 100%;
+  	background-color: #ddd;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.popup {
+	background-color: #bbb;
+	position: absolute;
+	height: 300px;
+	width: 400px;
+	border: ridge 2px #fff;
+	top: 10%;
+	left: 30%;
+	z-index: 1002;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.popupTitleBox {
+	background-color: #aaa;
+	height: 30px;
+	text-valign: center;
+	border: ridge 1px #888;
+	padding-left: 5px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 5px;
+	margin: 5px;
+}
+
+ul li {
+	padding: 5px;
+	margin: 2px;
+	text-align: center;
+	border: ridge 1px #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#pMain {
+	height: 220px;
+}
+
+#pMsg {
+	height: 50px;
+}
+
+#userPrivateMessage {	
+	border: ridge 1px #888;
+	height: 40px; 
+	width: 340px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#privateMessageButton{
+	height: 45px;
+	border: ridge 1px #888;
+	border-radius: 10px 10px 10px 10px;
+}
