@@ -74,7 +74,7 @@ body {
 	width: 99%;
 	height: 80%;
   	background-color: #bbb;
-  	color: white;
+/*   	color: white; */
 	border: 2px ridge #888;
   	resize: none;
 	border-radius: 10px 10px 10px 10px;
@@ -153,8 +153,16 @@ ul li {
 	height: 50px;
 }
 
+.privateMessages {
+	height: 95%;
+	width: 97%;
+	border: 2px ridge #888;
+	border-radius: 10px 10px 10px 10px;
+}
+
 #userPrivateMessage {	
 	border: ridge 1px #888;
+  	background-color: #ddd;
 	height: 40px; 
 	width: 340px;
 	border-radius: 10px 10px 10px 10px;

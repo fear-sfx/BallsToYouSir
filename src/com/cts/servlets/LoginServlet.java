@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		if(!clients.contains(user) && user != " " && user != "") {
 			clients.add(request.getParameter("username"));
 			Room.clients = clients;
-			Cookie userCookie = new Cookie("chatClient", "1");
+			Cookie userCookie = new Cookie("username", request.getParameter("username"));
 			userCookie.setMaxAge(-1);
 			response.addCookie(userCookie);
 			response.sendRedirect("/ChatTheSeventh/index.html");

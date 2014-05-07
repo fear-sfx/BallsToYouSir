@@ -4,15 +4,16 @@
 		<meta charset="UTF-8">
 		<title>Chat</title>
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css" media="all">
 	</head>
 	<body>
 		<div id="login" class="center">
-			<form action="/ChatTheSeventh/login" method="post">
-				<input type="text" name="username" id="username" autofocus/>
-				<input type="button" id="loginButton" value="Login">
+			<form action="/ChatTheSeventh/login" method="post" name="login">
+				<input type="text" name="username" id="username" autofocus /> 
+				<input type="submit" id="loginButton" value="Login">
 			</form>
-			<div style="clear: both"> </div>
+			<div style="clear: both"></div>
 		</div>
 	</body>
 </html>

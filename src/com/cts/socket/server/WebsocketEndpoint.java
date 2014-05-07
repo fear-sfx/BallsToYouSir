@@ -78,22 +78,26 @@ public class WebsocketEndpoint extends HttpServlet {
 				break;
 		msg.setSender(Room.clients.get(id));
 
-		if (msg.getRecipient().equals("all")) {
-			String json = gson.toJson(msg);
+		String json = gson.toJson(msg);
 
+		if (msg.getRecipient().equals("all")) {
 			synchronized (clients) {
 				for (Session client : clients) {
 					client.getBasicRemote().sendText(json);
 				}
 			}
 		} else {
-			String json = gson.toJson(msg);
+
+			for (id = 0; id < Room.clients.size(); id++)
+				if (Room.clients.get(id).equals(msg.getRecipient()))
+					break;
 
 			synchronized (clients) {
 				for (Session client : clients) {
-					client.getBasicRemote().sendText(json);
+					if (client.equals(clients.get(id)))
+						client.getBasicRemote().sendText(json);
 				}
-			}			
+			}
 		}
 	}
 
